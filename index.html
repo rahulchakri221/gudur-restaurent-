@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasty & Quality Noodles & Biryani Spot — Gudur</title>
+<meta name="description" content="Tasty & Quality Noodles & Biryani Spot, Vivekananda Road, Gudur. Biryani, noodles, fried rice, starters, fresh juice and ice cream.">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D7141A; --red-deep:#8E0B10; --blue:#1B4DB1; --green:#0A8A3C;
+  --yellow:#FFD21F; --white:#FFFFFF; --cream:#FFF4E0; --ink:#2B0507;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Hind',sans-serif;background:var(--red-deep);color:var(--white);line-height:1.55}
+h1,h2,h3,.brand{font-family:'Baloo 2',sans-serif;line-height:1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:12px clamp(16px,4vw,48px);background:rgba(142,11,16,.92);backdrop-filter:blur(8px);border-bottom:4px solid var(--blue)}
+.brand{font-size:1.15rem;font-weight:800;color:var(--yellow);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:600}
+.pill{background:var(--yellow);color:var(--ink);padding:.5em 1.2em;border-radius:99px;font-weight:700}
+@media(max-width:760px){nav ul li:not(:last-child){display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:grid;align-items:center;overflow:hidden;
+  padding:110px clamp(18px,5vw,72px) 60px;
+  background:radial-gradient(circle at 80% 20%,#F0383D 0,var(--red) 38%,var(--red-deep) 100%)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:14px;
+  background:linear-gradient(90deg,var(--blue) 0 33%,var(--green) 33% 66%,var(--yellow) 66%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center;max-width:1240px;margin:auto;width:100%}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:700;padding:.3em .9em;border-radius:99px;margin-bottom:18px}
+h1{font-size:clamp(2.8rem,8vw,6.6rem);font-weight:800;text-shadow:0 5px 0 var(--red-deep)}
+h1 .amp{color:var(--blue);background:var(--white);border-radius:50%;display:inline-grid;place-items:center;width:1.05em;height:1.05em;font-size:.7em;text-shadow:none;vertical-align:.1em}
+.band{display:inline-block;margin-top:14px;background:var(--white);color:var(--red);font-family:'Baloo 2';font-weight:800;
+  font-size:clamp(1.1rem,3vw,2.2rem);padding:.3em .7em;transform:rotate(-1.5deg);box-shadow:6px 6px 0 var(--blue)}
+.lead{max-width:36ch;margin:24px 0;font-size:1.2rem}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85em 1.7em;border-radius:99px;text-decoration:none;font-weight:700;border:3px solid var(--white);transition:transform .15s}
+.btn:hover{transform:translateY(-3px)}
+.btn.y{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+
+/* 3D TILT PHOTO */
+.stage{perspective:1100px}
+.tilt{position:relative;border-radius:22px;transform-style:preserve-3d;transition:transform .12s ease-out;
+  box-shadow:0 40px 60px -20px rgba(0,0,0,.55);border:6px solid var(--white);overflow:hidden;background:#000}
+.tilt img{display:block;width:100%;height:auto;animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12) translate(-2%,-1%)}}
+.float{position:absolute;font-size:2.6rem;filter:drop-shadow(0 12px 8px rgba(0,0,0,.4));animation:fl 4s ease-in-out infinite;transform:translateZ(60px)}
+.f1{top:-4%;left:-4%}.f2{bottom:6%;right:-3%;animation-delay:-1.3s}.f3{top:40%;left:-6%;animation-delay:-2.4s}
+@keyframes fl{50%{translate:0 -14px}}
+
+/* SECTIONS */
+section.pad{padding:clamp(56px,9vw,110px) clamp(18px,5vw,72px)}
+.wrap{max-width:1180px;margin:auto}
+h2{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;margin-bottom:28px;color:var(--yellow)}
+.light{background:var(--cream);color:var(--ink)}
+.light h2{color:var(--red)}
+.blue{background:var(--blue)}
+
+/* VIDEO */
+.video-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+.video-grid video,.video-grid .clip{width:100%;height:100%;min-height:260px;object-fit:cover;border-radius:18px;border:5px solid var(--white);background:#000}
+.clip{position:relative;overflow:hidden}
+.clip img{width:100%;height:100%;object-fit:cover;animation:kb 10s ease-in-out infinite alternate}
+.clip span{position:absolute;left:12px;bottom:12px;background:var(--red);padding:.2em .8em;border-radius:99px;font-weight:700}
+@media(max-width:760px){.video-grid{grid-template-columns:1fr}}
+
+/* MENU */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.tabs button{font:inherit;font-weight:700;padding:.55em 1.3em;border-radius:99px;border:3px solid var(--red);background:transparent;color:var(--red);cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--red);color:var(--white)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px;perspective:1000px}
+.card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 14px 0 -4px rgba(142,11,16,.25);transition:transform .15s ease-out;transform-style:preserve-3d;border:4px solid var(--white)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.card div{padding:14px 16px 18px}
+.card h3{font-size:1.25rem;color:var(--ink)}
+.card p{font-size:.95rem;margin:6px 0 10px;color:#5b3a3a}
+.price{display:inline-block;background:var(--green);color:var(--white);font-family:'Baloo 2';font-weight:800;font-size:1.2rem;padding:.1em .7em;border-radius:99px}
+
+/* ORDER + FIND */
+.order{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.order a{display:block;text-decoration:none;background:var(--white);color:var(--ink);padding:26px;border-radius:18px;font-weight:700;border-bottom:8px solid var(--yellow)}
+.order b{display:block;font-family:'Baloo 2';font-size:1.6rem;color:var(--red)}
+.find{display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:stretch}
+.find iframe{width:100%;min-height:320px;border:0;border-radius:18px}
+@media(max-width:760px){.find{grid-template-columns:1fr}}
+footer{background:var(--ink);text-align:center;padding:28px;font-size:.95rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#home">TASTY &amp; QUALITY</a>
+  <ul><li><a href="#videos">Videos</a></li><li><a href="#menu">Menu</a></li><li><a href="#find">Find us</a></li><li><a class="pill" href="#order">Order now</a></li></ul>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-grid">
+    <div>
+      <span class="tag">Santosh's · Gudur</span>
+      <h1>Tasty <span class="amp">&amp;</span> Quality</h1>
+      <span class="band">NOODLES &amp; BIRYANI SPOT</span>
+      <p class="lead">Dum biryani, noodles, fried rice and starters, cooked fresh every day. Plus a fresh juice and ice cream corner.</p>
+      <div class="btns"><a class="btn y" href="#order">Order now</a><a class="btn" href="#menu">See the menu</a></div>
+    </div>
+    <div class="stage">
+      <div class="tilt" id="heroTilt">
+        <img src="storefront.jpg" alt="Tasty & Quality Noodles & Biryani Spot shop front on Vivekananda Road, Gudur">
+        <span class="float f1" aria-hidden="true">🍜</span><span class="float f2" aria-hidden="true">🍗</span><span class="float f3" aria-hidden="true">🍹</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="pad blue" id="videos">
+  <div class="wrap">
+    <h2>See our spot</h2>
+    <div class="video-grid">
+      <!-- Put your own video file next to index.html and name it restaurant.mp4 -->
+      <video controls playsinline preload="metadata" poster="storefront.jpg"><source src="restaurant.mp4" type="video/mp4"></video>
+      <div class="clip"><img src="storefront.jpg" alt=""><span>Open daily</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad light" id="menu">
+  <div class="wrap">
+    <h2>Our menu</h2>
+    <div class="tabs" id="tabs" role="group" aria-label="Menu categories"></div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<section class="pad" id="order">
+  <div class="wrap">
+    <h2>Order your way</h2>
+    <div class="order">
+      <a href="https://share.google/EI2Zk1irz6ricr0BL"><b>Swiggy</b>Order online</a>
+      <a href="https://share.google/wYvc5NZs6gGQPEDO0"><b>Zomato</b>Order online</a>
+      <a href="https://wa.me/919121919181?text=Hello%20Tasty%20%26%20Quality%20Noodles%20and%20Biryani%20Spot%2C%20I%20would%20like%20to%20place%20an%20order."><b>WhatsApp</b>+91 91219 19181</a>
+    </div>
+  </div>
+</section>
+
+<section class="pad light" id="find">
+  <div class="wrap find">
+    <div>
+      <h2>Find us</h2>
+      <p><strong>Vivekananda Road, Gudur – 524101</strong><br>Andhra Pradesh</p>
+      <p style="margin-top:12px"><a href="tel:+919121919181"><strong>+91 91219 19181</strong></a></p>
+      <p style="margin-top:12px">Open daily</p>
+      <p class="btns" style="margin-top:20px"><a class="btn y" href="https://share.google/Njpvw1VWX0wxfY0jC">Get directions</a></p>
+    </div>
+    <iframe title="Map to Tasty & Quality" loading="lazy" src="https://www.google.com/maps?q=Vivekananda%20Road%2C%20Gudur%2C%20Andhra%20Pradesh&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>© 2026 Tasty &amp; Quality — Noodles &amp; Biryani Spot, Gudur</footer>
+
+<script>
+/* ===== EDIT YOUR MENU AND PRICES HERE (copy exact prices from your Zomato menu) ===== */
+const MENU = [
+  {cat:"Biryani",    name:"Chicken Dum Biryani",      desc:"Aromatic dum biryani with rich spices.", price:249, img:"photo-1589302168068-964664d93dc0"},
+  {cat:"Biryani",    name:"Chicken Dum Biryani Full", desc:"A generous full portion.",               price:299, img:"photo-1563379926898-05f4575a45d8"},
+  {cat:"Noodles",    name:"Veg Noodles",              desc:"Fresh vegetables tossed with noodles.",   price:159, img:"photo-1512058564366-18510be2db19"},
+  {cat:"Noodles",    name:"Egg Noodles",              desc:"Flavourful noodles with egg.",            price:169, img:"photo-1557872943-16a5ac26437e"},
+  {cat:"Noodles",    name:"Chicken Noodles",          desc:"Noodles with chicken pieces.",            price:189, img:"photo-1612929633738-8fe44f7ec841"},
+  {cat:"Fried Rice", name:"Veg Fried Rice",           desc:"Classic fried rice with vegetables.",     price:129, img:"photo-1603133872878-684f208fb84b"},
+  {cat:"Fried Rice", name:"Gobi Fried Rice",          desc:"Fried rice with crispy gobi.",            price:159, img:"photo-1516685018646-549198525c1b"},
+  {cat:"Fried Rice", name:"Chicken Fried Rice",       desc:"Fragrant fried rice with chicken.",       price:189, img:"photo-1547592180-85f173990554"},
+  {cat:"Starters",   name:"Veg Manchurian",           desc:"Crispy vegetable balls in sauce.",        price:139, img:"photo-1562967916-eb82221dfb92"},
+  {cat:"Starters",   name:"Chicken Manchurian",       desc:"Tender chicken in Manchurian sauce.",     price:249, img:"photo-1601050690597-df0568f70950"}
+];
+/* ========================================================================== */
+const tabs=document.getElementById('tabs'), cards=document.getElementById('cards');
+const cats=["All",...new Set(MENU.map(m=>m.cat))];
+let active="All";
+function render(){
+  tabs.innerHTML=cats.map(c=>`<button aria-pressed="${c===active}" data-c="${c}">${c}</button>`).join("");
+  cards.innerHTML=MENU.filter(m=>active==="All"||m.cat===active).map(m=>`
+    <article class="card"><img loading="lazy" alt="${m.name}" src="https://images.unsplash.com/${m.img}?auto=format&fit=crop&w=600&q=80">
+    <div><h3>${m.name}</h3><p>${m.desc}</p><span class="price">₹${m.price}</span></div></article>`).join("");
+}
+tabs.addEventListener('click',e=>{if(e.target.dataset.c){active=e.target.dataset.c;render()}});
+render();
+
+/* 3D tilt on hero photo and menu cards (follows the mouse) */
+function tilt(el,x,y,max){const r=el.getBoundingClientRect();
+  const px=(x-r.left)/r.width-.5, py=(y-r.top)/r.height-.5;
+  el.style.transform=`rotateY(${px*max}deg) rotateX(${-py*max}deg)`}
+const hero=document.getElementById('heroTilt');
+hero.addEventListener('mousemove',e=>tilt(hero,e.clientX,e.clientY,14));
+hero.addEventListener('mouseleave',()=>hero.style.transform='');
+cards.addEventListener('mousemove',e=>{const c=e.target.closest('.card');if(c)tilt(c,e.clientX,e.clientY,10)});
+cards.addEventListener('mouseout',e=>{const c=e.target.closest('.card');if(c&&!c.contains(e.relatedTarget))c.style.transform=''});
+</script>
+</body>
+</html>
